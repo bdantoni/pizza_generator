@@ -26,7 +26,14 @@ def pizza_size
 	size = ["small", "medium", "large"].sample
 end
 
+count = 0
+
+
 number_of_pizzas.times do
+count+=1
+
+
+puts "Pizza number #{count}"
 puts "Your pizza size is #{pizza_size}."
 puts "Your crust is #{pizza_crust}."
 puts "Your veggie is #{pizza_veggie}."
