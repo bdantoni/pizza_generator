@@ -146,7 +146,7 @@ else etprice = "extra meat"
 end
 
 puts "Your crust is #{pizza_crust}."
-puts "Your total cost is #{cost}"
+puts "Your total cost for pizza is #{cost}"
 puts "__________________________________________"
 end
 
@@ -154,32 +154,32 @@ end
 def get_pizza
 	get = ["pick up", "delivery"].sample
 end
+def fast_delivery
+	fast = ["30 minutes or under", "40 minutes", "50 minutes or longer"].sample
+end
 
 gpizza = get_pizza
 puts "Pizza #{gpizza}"
 if gpizza == "pick up"
 	p "picking up your pizza is no extra charge."
 		cost += 0
-else gpizza == "delivery"
+elsif gpizza == "delivery"
 	p "there is a delivery fee of 5.00"
 		cost += 5
+else gpizza == "delivery"
+	fpizza
 end
 
-
-def delivery_speed
-speed = ["30 minutes or under", "40 minutes", "50 minutes or longer"].sample
-end
-
-
-
-dspeed = delivery_speed
-if dspeed == "30 minutes or under"
+fpizza = fast_delivery
+p "Delivery was #{fpizza}."
+if fpizza == "30 minutes or under"
 	p "Your tip included will be 6.00"
-		cost += 6
-elsif dspeed == "40 minutes"
+				cost += 6
+elsif fpizza == "40 minutes"
 	p "Your tip included will be 4.00"
-		cost += 4
-else dspeed == "50 minutes or longer"
+				cost += 4
+else fpizza == "50 minutes or longer"
 	p "Your tip is optional"
-		cost += 0 
+				cost += 0 
 end
+		
